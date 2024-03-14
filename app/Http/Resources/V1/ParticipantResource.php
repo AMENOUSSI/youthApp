@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Http\Resources\V1;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class ParticipantResource extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @return array<string, mixed>
+     */
+    public function toArray(Request $request): array
+    {
+        return [
+            "id"=> $this->id,
+            "firstName"=> $this->first_name,
+            "lastName"=> $this->last_name,
+            "email"=> $this->email,
+            "phone" => $this->phone,
+            "cellule" => $this->cellule,
+            "totalAmount" => $this->total_amount,
+            "paidAmount" => $this->paid_amount,
+            "leavingDate" => $this->leaving_date,
+        ];
+    }
+}
